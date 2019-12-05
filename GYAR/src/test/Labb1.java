@@ -7,20 +7,21 @@ import net.sourceforge.tess4j.*;
 
 public class Labb1 {
 	
-	String result;
+	
 	
 	
 	public static void main(String[] args) {
-		String result = "";
 		
-		File imp = new File("C:\\Users\\usr\\Pictures\\labb1test3.PNG");
+		
+		File imp = new File("C:\\Users\\usr\\Pictures\\labb1test4.PNG");
 		
 		ITesseract tess = new Tesseract();
 		tess.setDatapath("C:\\Users\\usr\\Documents\\GitHub\\GYAR\\GYAR\\tessdata");
 		tess.setLanguage("swe");
 		
 		try {
-			result = tess.doOCR(imp);
+			String result = tess.doOCR(imp);
+			String[] res = {result};
 			Labb1c2.not(result);
 			System.out.println(result);
 		}
