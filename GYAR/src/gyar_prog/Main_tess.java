@@ -9,7 +9,12 @@ import net.sourceforge.tess4j.TesseractException;
 
 public class Main_tess {
 	
-	public static void main(String[] args) {
+	String timestart;
+	String fixedtxt;
+	
+	public void tess() {
+		
+		
 		
 		
 		File imp = new File("C:\\Users\\usr\\Pictures\\labb1test4.PNG");
@@ -20,14 +25,14 @@ public class Main_tess {
 		
 		try {
 			String result = tess.doOCR(imp);
-			String[] res = {result};
-			Mcon.mot(result);
-			System.out.println(result);
+			timestart = Mcon.mot(result);
+			fixedtxt = Mcon.fixer(result);
 		}
 		
 		catch(TesseractException e) {
 			System.err.println(e.getMessage());
 		}
+		
 	}
 	
 	

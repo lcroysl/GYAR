@@ -2,7 +2,8 @@ package gyar_prog;
 
 public class Mcon {
 	
-	public static void mot(String exp) {
+	
+	public static String mot(String exp) {
 		
 		String[] timeh = {};
 		String result = "";
@@ -18,14 +19,22 @@ public class Mcon {
 					String[] fixer = timeh[0].split("(\\n)");
 					String timehm = fixer[1] + c;
 					result = timehm;
+					
 				}
 				}
 			}
 			
 			
 		}
+		return result;
+	}
+	
+	public static String fixer(String broken) {
 		
-		System.out.println("Skolan börjar : " + result);
+		String fixed = broken.replace("\n", " ");
+			
+		System.out.println(broken);
+		return fixed;
 	}
 		
 	}
