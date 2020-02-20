@@ -36,14 +36,15 @@ public class Main_tess {
 	}
 	
 	public String results() {
-		
+		timestart = Main_control.linefix(result);
 		String check = Main_control.fixer(result);
 		Inp_check = Input_check.checker(check);
 		if (Inp_check = true) {
-		timestart = Main_control.linefix(result);
 		fixedtxt = Main_control.fixer(result);
-		return fixedtxt;
+		String classfix = Main_control.classfix(fixedtxt);
+		return classfix;
 		}
+		
 		
 			return "";
 		
