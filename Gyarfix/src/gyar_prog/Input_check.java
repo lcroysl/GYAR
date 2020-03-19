@@ -38,11 +38,6 @@ public class Input_check {
 				}
 			}
 		}
-		
-		
-		
 		return true;
-			
 	}
-
 }
