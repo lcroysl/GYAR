@@ -9,17 +9,46 @@ import net.sourceforge.tess4j.TesseractException;
 
 public class Main_tess {
 	
-	String timestart;
-	String fixedtxt;
-	Boolean Inp_check;
 	String result;
 	File imp;
 	
-	public void tess() {
+	public void tess(String Scheme, String day) {
 		
-		if(TE17D.class1().equals("TE17D")) {
-			imp = new File("C:\\Users\\usr\\Pictures\\labb1test6.PNG");
+		if(Scheme.equals("MyScheme")) {
+			if(day.equals("Monday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\MyMonday.PNG");
+			}
+			else if(day.equals("Tuesday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\MyTuesday.PNG");
+			}
+			else if(day.equals("Wednesday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\MyWednesday.PNG");
+			}
+			else if(day.equals("Thursday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\MyThursday.PNG");
+			}
+			else{
+				imp = new File("C:\\Users\\usr\\Pictures\\MyFriday.PNG");
+			}
 		}
+		if(Scheme.equals("TE17D")) {
+			if(day.equals("Monday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\MondayTE17D.PNG");
+			}
+			else if(day.equals("Tuesday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\TuesdayTE17D.PNG");
+			}
+			else if(day.equals("Wednesday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\WednesdayTE17D.PNG");
+			}
+			else if(day.equals("Thursday")) {
+				imp = new File("C:\\Users\\usr\\Pictures\\ThursdayTE17D.PNG");
+			}
+			else{
+				imp = new File("C:\\Users\\usr\\Pictures\\FridayTE17D.PNG");
+			}
+		}
+		
 		ITesseract tess = new Tesseract();
 		tess.setDatapath("C:\\Users\\usr\\Documents\\GitHub\\GYAR\\Gyarfix\\tessdata");
 		tess.setLanguage("swe");
@@ -31,15 +60,5 @@ public class Main_tess {
 		}
 	}
 	
-	public String results() {
-		timestart = Main_control.linefix(result);
-		//String check = Main_control.fixer(result);
-		//Inp_check = Input_check.checker(check);
-		//if (Inp_check = true) {
-			fixedtxt = Main_control.fixer(result);
-			String classfix = Main_control.classfix(fixedtxt);
-			return classfix;
-		
-	
-	}
+
 }

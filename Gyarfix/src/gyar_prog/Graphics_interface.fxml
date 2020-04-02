@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBase?>
+<?import javafx.scene.control.TextArea?>
+
+<BorderPane prefHeight="260.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="gyar_prog.Main_control">
+	<top>
+		<VBox>
+			<MenuBar>
+				<Menu text="Options">
+					<MenuItem text="Clear" onAction="#clear"/>
+					<MenuItem text="Show raw text" onAction="#showSource"/>
+					<MenuItem text="Exit" onAction="#exit"/>
+				</Menu>
+				
+				<Menu text="Choose day">
+					<MenuItem text="Monday" onAction="#setMonday"/>
+					<MenuItem text="Tuesday" onAction="#setTuesday"/>
+					<MenuItem text="Wednesday" onAction="#setWednesday"/>
+					<MenuItem text="Thursday" onAction="#setThursday"/>
+					<MenuItem text="Friday" onAction="#setFriday"/>
+				</Menu>
+				<Menu text="Choose Scheme">
+					<MenuItem text="My Scheme" onAction="#setMyScheme"/>
+					<MenuItem text="TE17D" onAction="#setTE17D"/>
+				</Menu>
+			</MenuBar>
+		
+			<ToolBar>
+				<HBox spacing="8">
+					<Button text ="Scan" onAction="#runScan"/>
+					<Button text ="Start" onAction="#runSstart"/>
+					<Button text ="End" onAction="#runSend"/>
+				</HBox>
+			</ToolBar>
+			
+			<HBox>
+				<TextArea fx:id="Output" prefWidth="500.0" prefHeight="200.0" text ="Ready to run"/>
+			</HBox>
+			
+		</VBox>
+	</top>
+</BorderPane>
+
